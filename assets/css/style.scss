@@ -12,9 +12,15 @@ body {
     background: linear-gradient(#2196f3, #e91e63);
     height: 100vh;
     overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
+    section {
+        width: 100%;
+        height: 100vh;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 }
 
 .bubbles {
@@ -23,7 +29,6 @@ body {
     width: 100%;
     position: absolute;
     bottom: -130px;
-    z-index: -1;
 
     span {
         width: 60px;
@@ -50,7 +55,43 @@ body {
     }
 }
 
+.history-content {
+    position: absolute;
+    width: 240px;
+    height: 300px;
+    background: rgba(255, 255, 255, .16);
+    backdrop-filter: blur(5px);
+    transform: translate(-100%, 69%);
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, .15);
+    border-left: 1px solid rgba(255, 255, 255, .25);
+    border-top: 1px solid rgba(255, 255, 255, .25);
+    overflow-y: auto;
+    z-index: 10;
+    opacity: 0;
+    display: none;
+
+    ul {
+        list-style-type: none;
+
+        li {
+            height: 40px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            color: #fff;
+            font-size: 20px;
+
+            &:hover {
+                background: rgba(255, 255, 255, .1);
+            }
+        }
+    }
+}
+
 .container {
+
     width: 360px;
     background: rgba(255, 255, 255, .1);
     border-radius: 10px;
@@ -99,6 +140,7 @@ body {
         transition: 200ms;
         margin-top: 10px;
         border-radius: 10px;
+        user-select: none;
 
         &:hover {
             background: rgba(255, 255, 255, .1);
@@ -111,20 +153,20 @@ input:focus {
     border: 1px solid rgba(255, 255, 255, .1) !important;
 }
 
-@keyframes animate {
-    to {
-        transform: translateY(-130vh);
-    }
-}
+// @keyframes animate {
+//     to {
+//         transform: translateY(-130vh);
+//     }
+// }
 
-@keyframes move {
-    to {
-        transform: translateX(-500px);
-    }
-}
+// @keyframes move {
+//     to {
+//         transform: translateX(-500px);
+//     }
+// }
 
-@media screen and (max-width: 500px) {
-    .container {
-        width: 100% !important;
-    }
-}
+// @media screen and (max-width: 500px) {
+//     .container {
+//         width: 100% !important;
+//     }
+// }

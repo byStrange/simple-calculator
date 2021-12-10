@@ -1,6 +1,8 @@
 let bubbleParent = document.querySelector('.bubbles');
 let delays = [2.2, 3.5, 0.2, 6, 7, 4, 3];
 let scales = [2.15, 1.55, .8, 2.15, 3.4, 1];
+let menu = document.querySelector('.history-content');
+let container = document.querySelector('.container')
 let buttons = [{
     t: ['Ac', 7, 4, 1, '0']
 }, {
@@ -11,6 +13,7 @@ let buttons = [{
     t: ['/', '-', '+', '*', '=']
 }];
 let form = document.querySelector('form')
+let resultInput = document.querySelector('#answer')
 for (let i = 0; i < 7; i++) {
     let span = document.createElement('span');
     span.setAttribute('style', '--i:' + i + 's')
@@ -31,7 +34,6 @@ for (let c = 0; c < buttons.length + 1; c++) {
     form.appendChild(row)
 }
 let btns = document.querySelectorAll('[type=button]')
-let resultInput = document.querySelector('#answer')
 btns.forEach(they => {
     they.onclick = function () {
         if (this.value == 'Ac') {
@@ -58,3 +60,5 @@ setInterval(() => {
         console.log('')
     }
 }, 100)
+menu.style.left = container.getBoundingClientRect().x - 10 + 'px'
+menu.style.top = container.getBoundingClientRect().y + 'px'
