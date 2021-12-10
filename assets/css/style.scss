@@ -104,6 +104,11 @@ body {
     }
 }
 
+input:focus {
+    outline: none !important;
+    border: 1px solid rgba(255, 255, 255, .1) !important;
+}
+
 @keyframes animate {
     to {
         transform: translateY(-130vh);
