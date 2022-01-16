@@ -180,3 +180,18 @@ input:focus {
   border: 1px solid rgba(255, 255, 255, 0.1) !important;
 }
 /*# sourceMappingURL=style.css.map */
+@keyframes animate {
+    to {
+        transform: translateY(-130vh);
+    }
+}
+@keyframes move {
+    to {
+        transform: translateX(-500px);
+    }
+}
+@media screen and (max-width: 500px) {
+    .container {
+        width: 100% !important;
+    }
+}
